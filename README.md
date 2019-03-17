@@ -5,3 +5,7 @@
 - basic email contact
 - create meetups, register for meetups, edit and delete meetup data...
 - add comments and view users profile page
+
+
+### Screenshots:
+![meetups-app demo preview gif](../screenshots/screenshots/preview.gif?raw=true)
