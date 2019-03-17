@@ -1,0 +1,158 @@
+<div class="container">
+
+  <!-- Form info -->
+  <form id="form-info" class="form-info validate" method="POST" action="/profile/{{user._id}}/updateInfo"
+    {{#if profileOwner}} style="display: grid;" {{else}} style="display:initial;" {{/if}} enctype="multipart/form-data">
+
+    {{#if profileOwner}}
+    <h2 class="heading-area heading-info">
+      <i class="material-icons">person</i>Account settings
+    </h2>
+    {{/if}}
+
+    <div class="avatar-area">
+      {{#if user.avatar}}
+      <img id="profile-image" class="profile-image" src="\\{{avatar}}">
+      <span class="username">{{user.username}}</span>
+      {{else}}
+      <img id="profile-image" class="profile-image" src="/images/site/placeholder.jpg">
+      <span class="username">{{user.username}}</span>
+      {{/if}} {{#if profileOwner}}
+      <a id="btn-upload-avatar" class="btn file-field">
+        <i class="material-icons">cloud_upload</i>Choose Avatar
+      </a>
+      <input class="hidden" type="file" id="filePicker" name="filePicker" accept="image/*" name="filepicker"> {{/if}}
+    </div>
+
+
+    {{#if profileOwner}}
+    <div class="info-area">
+      <!-- form validation errors -->
+      {{#if formInfoErrors}} {{#each formInfoErrors}}
+      <div class="alert error">
+        <span>{{msg}}</span>
+      </div>
+      {{/each}} {{/if}}
+      <div class="mat-div">
+        <label for="username" class="mat-label">Username</label>
+        <input type="text" class="mat-input" id="username" name="username" value="{{user.username}}" required>
+      </div>
+      <div class="mat-div">
+        <label for="email" class="mat-label">E-mail</label>
+        <input type="email" class="mat-input" id="email" name="email" value="{{user.email}}" required>
+      </div>
+      <div class="btn-form-info">
+        <button type="submit" class="btn">Update account</button>
+      </div>
+    </div>
+    {{/if}}
+  </form>
+
+
+
+
+
+
+
+  <!-- Form password -->
+  {{#if profileOwner}}
+  <form id="form-password" class="form-password validate" method="POST" action="/profile/{{user._id}}/updatePassword">
+
+    <h2 class="heading-area heading-pw">
+      <i class="material-icons">security</i>Password settings
+    </h2>
+
+    <!--  Password mismatch error -->
+    {{#if oldPasswordError}}
+    <div class="alert error">
+      <span>{{oldPasswordError}}</span>
+    </div>
+    {{/if}}
+
+    <!-- form validation errors -->
+    {{#if formPwErrors}} {{#each formPwErrors}}
+    <div class="alert error">
+      <span>{{msg}}</span>
+    </div>
+    {{/each}} {{/if}}
+
+    <div class="mat-div">
+      <label for="oldPassword" class="mat-label">Old Password</label>
+      <input type="password" class="mat-input" id="oldPassword" name="oldPassword" required>
+    </div>
+    <div class="mat-div">
+      <label for="password" class="mat-label">Password</label>
+      <input type="password" class="mat-input" id="password" name="password" required>
+    </div>
+    <div class="mat-div">
+      <label for="confirmPassword" class="mat-label">Confirm Password</label>
+      <input type="password" class="mat-input" id="confirmPassword" name="confirmPassword" required>
+    </div>
+
+    <div class="btn-form-password">
+      <button type="submit" class="btn">Update Password</button>
+    </div>
+  </form>
+  {{/if}}
+
+
+
+  <!-- Created Meetups gallery -->
+  {{#if userCreatedMeetups.length}}
+  <div class="gallery-container">
+    <h2 class="gallery-title">Created meetups</h2>
+    <div class="gallery">
+      {{#each userCreatedMeetups}}
+      <a href="http://localhost:3000/meetup/{{_id}}">
+        <div class="gallery-item">
+          <img class="gallery-image" src="\\{{imageUrl}}" alt="">
+          <span class="gallery-title-box">{{title}}</span>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+  {{else}} {{#if profileOwner}}
+  <div class="gallery-container">
+    <h2 class="gallery-title">You haven't created any meetups</h2>
+  </div>
+  {{else}}
+  <div class="gallery-container">
+    <h2 class="gallery-title">This user hasn't created any meetups</h2>
+  </div>
+  {{/if}} {{/if}}
+
+
+
+  <!-- Registered Meetups gallery -->
+  {{#if registeredMeetups.length}}
+  <div class="gallery-container">
+    <h2 class="gallery-title">Registered meetups</h2>
+    <div class="gallery">
+      {{#each registeredMeetups}}
+      <a href="http://localhost:3000/meetup/{{_id}}">
+        <div class="gallery-item">
+          <img class="gallery-image" src="\\{{imageUrl}}" alt="">
+          <span class="gallery-title-box">{{title}}</span>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+  {{else}} {{#if profileOwner}}
+  <div class="gallery-container">
+    <h2 class="gallery-title">You haven't registered for any meetup</h2>
+  </div>
+  {{else}}
+  <div class="gallery-container">
+    <h2 class="gallery-title">This user is not registered for any meetup</h2>
+  </div>
+  {{/if}} {{/if}}
+
+
+</div>
+
+
+
+<!-- Script -->
+<script src="/javascripts/pageScripts/profile.js"></script>

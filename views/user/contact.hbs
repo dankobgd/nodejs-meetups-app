@@ -1,0 +1,57 @@
+<div class="container">
+  <form class="grid-contact validate" method="POST" action="/contact">
+    <div class="card contact">
+      <span class="card-content contact">
+        <span class="card-title contact">Need help? send an e-mail to us</span>
+
+        <!-- Response msg -->
+        {{#if response}}
+        <div class="alert success">
+          <span>{{response}}</span>
+        </div>
+        {{/if}}
+
+        <div class="contact-emails">
+          <!-- Email From -->
+          <div class="mat-div email-from">
+            <label for="email" class="mat-label">Email (from)</label>
+            {{#if user}}
+            <input type="email" class="mat-input" id="email" name="email" value="{{user.email}}" required>
+            {{else}}
+            <input type="email" class="mat-input" id="email" name="email" required>
+            {{/if}}
+          </div>
+
+          <!-- Email to -->
+          <div class="mat-div email-to">
+            <label for="emailTo" class="mat-label">to</label>
+            <input type="text" class="mat-input" value="meetups.com" disabled="true" required>
+          </div>
+        </div>
+
+
+        <!-- Name -->
+        <div class="mat-div">
+          <label for="name" class="mat-label">Name</label>
+          <input type="name" class="mat-input" id="name" name="name" required>
+        </div>
+
+        <!-- Subject -->
+        <div class="mat-div">
+          <label for="subject" class="mat-label">Subject</label>
+          <input type="text" class="mat-input" id="subject" name="subject" required>
+        </div>
+
+        <!-- Message -->
+        <div class="mat-div">
+          <label for="message" class="mat-label">Message</label>
+          <textarea class="mat-input" name="message" id="message" name="message" required></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <div class="btn-send-mail" style="margin-top: 3rem;">
+          <button type="submit" class="btn">Send</button>
+        </div>
+  </form>
+</div>
+</div>

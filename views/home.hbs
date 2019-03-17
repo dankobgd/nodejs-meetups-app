@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="grid-home">
+
+    <!-- Featured meetups title -->
+    <h1 class="featured-meetups">Featured Meetups</h1>
+
+
+    {{#if meetups.length}}
+    <!-- Carousel slideshow -->
+    <div class="carousel-container">
+      <div class="carousel-content">
+        {{#each meetups}}
+        <div class="carousel-item fade">
+          <a href="/meetup/{{_id}}">
+            <img class="carousel-img" id="{{_id}}" src="{{imageUrl}}">
+          </a>
+          <span class="carousel-title">{{title}}</span>
+        </div>
+        {{/each}}
+
+        <a class="arrow previous" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="arrow next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <div class="carousel-dots">
+        {{#each meetups}}
+        <span class="dot" onclick="currentSlide({{@index}} + 1)"></span>
+        {{/each}}
+      </div>
+    </div>
+    {{else}}
+    <div class="carousel-container zero-meetups">
+      <div class="carousel-content zero-meetups">
+        <p>No Meetups Created</p>
+        <p>Go ahead and post one</p>
+        <a href="/createMeetup">Create New</a>
+      </div>
+    </div>
+    {{/if}}
+
+
+
+
+    <!-- Middle section text -->
+    <div class="middle-section view-meetups">
+      <span class="middle-section-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero consequuntur, excepturi voluptatibus dolorem iste
+        libero
+        maxime adipisci accusamus odio magnam! Nostrum laudantium atque nulla, sit consequuntur laboriosam delectus
+        architecto
+        quaerat! lorem
+      </span>
+      <a href="/meetups" class="btn-transparent">View all</a>
+    </div>
+
+    <div class="middle-section create-meetup">
+      <span class="middle-section-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur suscipit omnis ullam nesciunt asperiores
+        repudiandae
+        eum odio alias hic ipsam accusantium necessitatibus iste culpa, vero explicabo illo, quia repellendus odit.
+      </span>
+      <a href="/createMeetup" class="btn-transparent">Create Meetup</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Script -->
+<script src="/javascripts/pageScripts/home.js"></script>
+
+
+<script>
+  window.onload = function () {
+    const success = '{{{success}}}'
+
+    if (success) {
+      new Toast('{{success}}');
+    }
+  }
+</script>

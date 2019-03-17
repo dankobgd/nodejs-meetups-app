@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+
+  <link rel="stylesheet" href="/components/components.css">
+  <link rel='stylesheet' href='/stylesheets/master.css'>
+</head>
+
+<body>
+
+  <!-- Navigation menu -->
+  {{> navbar}}
+
+  <!-- Main content -->
+  {{{body}}}
+
+  <!-- Scripts -->
+  <script src="/components/components.js"></script>
+  <script src="/javascripts/form-validation/validation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/sr.js"></script>
+</body>
+
+</html>

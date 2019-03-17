@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="card create-meetup">
+    <span class="card-content create-meetup">
+      <form id="form" class="grid-create-meetup validate" method="POST" enctype="multipart/form-data">
+
+        <!-- Create meetup page title -->
+        <span class="card-title create-meetup">Create new meetup</span>
+
+        <!-- Invalid location for geocode API -->
+        {{#if invalidLocation}}
+        <div class="alert error">
+          <span>{{invalidLocation}}</span>
+        </div>
+        {{/if}}
+
+        <!-- File extension error -->
+        {{#if fileFilterError}}
+        <div class="alert error">
+          <span>{{fileFilterError}}</span>
+        </div>
+        {{/if}}
+
+        <!-- File size error -->
+        {{#if fileSizeError}}
+        <div class="alert error">
+          <span>{{fileSizeError}}</span>
+        </div>
+        {{/if}}
+
+        <!-- Title -->
+        <div class="mat-div title">
+          <label for="title" class="mat-label">Title</label>
+          <input type="title" class="mat-input" id="title" name="title">
+        </div>
+
+        <!-- Location -->
+        <div class="mat-div location">
+          <label for="location" class="mat-label">Location</label>
+          <input type="location" class="mat-input" id="location" name="location">
+        </div>
+
+        <!-- File Picker -->
+        <a id="uploadImageButton" class="btn file-field">
+          <i class="material-icons">cloud_upload</i>Upload image
+        </a>
+        <input class="hidden" type="file" id="filePicker" name="filePicker" accept="image/*" name="filepicker">
+
+        <!-- Image Preview -->
+        <div id="dropzone" class="preview hidden">
+          <img id="preview" class="preview-img" src="">
+          <span class="preview-image-info"></span>
+        </div>
+
+        <!-- Description -->
+        <div class="mat-div description">
+          <label for="description" class="mat-label">Description</label>
+          <textarea class="mat-input" name="description" id="description" name="description"></textarea>
+        </div>
+
+        <!-- Date Picker -->
+        <div class="mat-div dpicker">
+          <label for="datepicker" class="mat-label">Choose Date</label>
+          <input type="text" class="mat-input datepicker" id="datepicker" name="datepicker">
+        </div>
+
+        <!-- Time Picker -->
+        <div class="mat-div tpicker">
+          <label for="timepicker" class="mat-label">Choose Time</label>
+          <input type="text" class="mat-input timepicker" id="timepicker" name="timepicker">
+        </div>
+
+        <!-- Button Submit -->
+        <div class="btn-create-meetup">
+          <button id="btnSubmit" class="btn" disabled="true">Create Meetup</button>
+        </div>
+      </form>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Dependencies for Date & Time pickers -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/css/bootstrap-material-datetimepicker.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.min.js"></script>
+
+<!-- Script -->
+<script src="/javascripts/pageScripts/createMeetup.js"></script>
+
+<script>
+  window.onload = function () {
+    const success = '{{{success}}}'
+
+    if (success) {
+      new Toast('{{success}}');
+    }
+  }
+</script>

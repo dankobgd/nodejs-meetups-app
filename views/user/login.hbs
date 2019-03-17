@@ -1,0 +1,58 @@
+<div class="container">
+  <form class="grid-login validate" method="POST" action="/login">
+    <div class="card login">
+      <div class="card-content login">
+        <span class="card-title login">Login</span>
+
+        <!-- Login form validation errors -->
+        {{#if validationErrors}}
+        {{#each validationErrors}}
+        <div class="alert error">
+          <span>{{msg}}</span>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        <!-- Login database check error -->
+        {{#if error}}
+        <div class="alert error">
+          <span>{{error}}</span>
+        </div>
+        {{/if}}
+
+        <!-- Email -->
+        <div class="mat-div">
+          <label for="email" class="mat-label">Email</label>
+          <input type="email" class="mat-input" id="email" name="email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mat-div">
+          <label for="password" class="mat-label">Password</label>
+          <input type="password" class="mat-input" id="password" name="password" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="btn-login">
+          <button class="btn" type="submit">Submit</button>
+        </div>
+
+        <!-- Forgot Password -->
+        <a class="forgot-password-link" href="/register">Don't have an account? Create one now</a> <br>
+        <a class="forgot-password-link" href="/forgotPassword">Forgot password?</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<script>
+  window.onload = function () {
+    const success = '{{{success}}}'
+
+    if (success) {
+      new Toast('{{success}}');
+    }
+  }
+</script>

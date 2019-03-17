@@ -1,0 +1,1269 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f6f9fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Color Palette -----------------------------------------------------*/
+:root {
+  --theme1: red;
+}
+
+/* Responsive Container -----------------------------------------------------*/
+
+.container {
+  margin: 2rem auto;
+  max-width: 1170px;
+  width: 90vw;
+}
+
+@media screen and (min-width: 993px) {
+  .container {
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    width: 85vw;
+  }
+}
+
+/* Basic util classes -----------------------------------------------------*/
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* #########################################################################
+                            Home page
+######################################################################### */
+
+/* Home page elements */
+
+.featured-meetups {
+  background-color: #96616b;
+  color: rgb(241, 241, 241);
+  text-align: center;
+  font-family: cursive;
+  margin-bottom: -1.5rem;
+  padding: 0.5rem;
+}
+
+.carousel-item {
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.carousel-content .arrow {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-content .arrow:hover {
+  background: rgba(0, 0, 0, 1);
+}
+
+.carousel-content .carousel-item {
+  cursor: pointer;
+  height: 600px;
+  width: 100%;
+}
+
+.carousel-img {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-title {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  padding: 3rem;
+  align-items: center;
+  background-color: #96616b;
+  border-radius: 6px;
+}
+
+.middle-section-content {
+  color: #fff;
+  line-height: 1.5;
+}
+
+.middle-section a.btn {
+  color: #fff;
+}
+
+.middle-section a {
+  margin-top: auto;
+}
+
+.carousel-container.zero-meetups {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  border: 1px solid #9b0941;
+}
+
+.carousel-content.zero-meetups {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-content.zero-meetups :nth-child(1) {
+  font-size: 3rem;
+  color: #9b0941;
+}
+
+.carousel-content.zero-meetups :nth-child(2) {
+  font-size: 2rem;
+  color: #7b454f;
+}
+
+.carousel-content.zero-meetups :nth-child(3) {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #81555d;
+  margin-top: 1rem;
+}
+
+.carousel-content.zero-meetups :nth-child(3):hover {
+  text-decoration: underline;
+}
+
+/* Home page Grid */
+
+.featured-meetups {
+  grid-area: featured;
+}
+.carousel-container {
+  grid-area: carousel;
+}
+.middle-section.view-meetups {
+  grid-area: view;
+}
+.middle-section.create-meetup {
+  grid-area: create;
+}
+
+.grid-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1rem;
+  grid-template-areas:
+    "featured featured"
+    "carousel carousel"
+    "view create";
+}
+
+@media screen and (max-width: 800px) {
+  div.middle-section {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .grid-home {
+    grid-template-areas:
+      "featured featured"
+      "carousel carousel"
+      "view view"
+      "create create";
+  }
+}
+
+/* #########################################################################
+                          Create Meetup page
+######################################################################### */
+
+/* Create Meetup page elements */
+
+.card-title.create-meetup {
+  text-align: center;
+}
+
+#filePicker {
+  display: none;
+}
+
+#uploadImageButton {
+  width: 250px;
+}
+
+.file-field {
+  margin-top: 3rem;
+  background-color: #9b0941;
+  color: #fff;
+}
+
+.btn-create-meetup {
+  margin-top: 3rem;
+}
+
+.btn-create-meetup button {
+  width: 250px;
+  background-color: #9b0941;
+  color: #fff;
+}
+
+.preview-img {
+  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.preview {
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-image-info {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Grid for Create Meetup page*/
+
+.card.create-meetup {
+  width: 60%;
+  margin: inherit;
+}
+
+@media screen and (max-width: 900px) {
+  .card.create-meetup {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card.create-meetup {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  #uploadImageButton {
+    width: 100%;
+  }
+
+  .btn-create-meetup button {
+    width: 100%;
+  }
+}
+
+.card-title.create-meetup {
+  grid-area: h2;
+}
+.title {
+  grid-area: title;
+}
+.location {
+  grid-area: location;
+}
+.file-field {
+  grid-area: upload;
+}
+.preview {
+  grid-area: preview;
+}
+.description {
+  grid-area: description;
+}
+.dpicker {
+  grid-area: dpicker;
+}
+.tpicker {
+  grid-area: tpicker;
+}
+.btn-create-meetup {
+  grid-area: submit;
+}
+.grid-create-meetup .alert {
+  grid-area: error;
+}
+
+.grid-create-meetup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2rem;
+  grid-template-areas:
+    "h2 h2"
+    "error error"
+    "title title"
+    "location location"
+    "upload upload"
+    "preview preview"
+    "description description"
+    "dpicker tpicker"
+    "submit submit";
+}
+
+@media screen and (max-width: 600px) {
+  .grid-create-meetup {
+    grid-template-areas:
+      "h2 h2"
+      "error error"
+      "title title"
+      "location location"
+      "upload upload"
+      "preview preview"
+      "description description"
+      "dpicker dpicker"
+      "tpicker tpicker"
+      "submit submit";
+  }
+}
+
+/* #########################################################################
+                            Single Meetup
+######################################################################### */
+
+/* meetup card stuff */
+
+.grid-meetup {
+  display: grid;
+}
+
+.card.meetup {
+  margin-bottom: 2rem;
+}
+
+.card-content.meetup.header {
+  position: relative;
+}
+
+.posted-by {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+.card-content.meetup.body {
+  display: flex;
+}
+
+.details-area {
+  width: 50%;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-area .date {
+  font-size: 1rem;
+  color: rgb(72, 113, 189);
+  text-transform: capitalize;
+}
+
+.details-area .location {
+  font-size: 1rem;
+  color: rgb(245, 159, 78);
+  padding: 1rem 0;
+  text-transform: capitalize;
+}
+
+.details-area .description {
+  font-size: 1rem;
+  color: rgb(68, 68, 68);
+  text-transform: capitalize;
+}
+
+.meetup-action-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.btn-edit-datetime {
+  position: absolute;
+  padding: 1rem;
+  top: 0.5rem;
+  right: 0;
+}
+
+.btn-edit-info {
+  position: absolute;
+  padding: 1rem;
+  top: 88px;
+  right: 0;
+}
+
+.btn-users-list {
+  position: absolute;
+  padding: 1rem;
+  right: 0;
+  bottom: 1rem;
+}
+.btn-upload-avatar {
+  background-color: #9b0941;
+}
+
+.users-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  counter-reset: num;
+}
+
+.users-list li {
+  counter-increment: num;
+  margin: 0.5rem;
+  padding: 5px;
+}
+
+.users-list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.users-list-item-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.users-list li:hover {
+  background-color: #eee;
+}
+
+.users-list-index {
+  margin-right: 2rem;
+  background-color: rgb(0, 200, 200);
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 900px) {
+  .card-content.meetup.body {
+    display: flex;
+    flex-direction: column;
+  }
+  .details-area {
+    width: 100%;
+    position: relative;
+  }
+  #map {
+    width: 100% !important;
+  }
+  .details-area {
+    height: 300px;
+  }
+  .posted-by {
+    position: static;
+  }
+}
+
+#map {
+  height: 300px;
+  width: 50%;
+}
+
+.auth-to-comment {
+  margin-top: 1rem;
+  color: #333;
+  font-size: 0.875rem;
+}
+
+.error-output-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  width: 50%;
+  height: 200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 4px solid rgb(189, 51, 17);
+  border-radius: 12px;
+}
+
+.error-output-text {
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.error-output-back-link {
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.error-output-back-link:hover {
+  text-decoration: underline;
+}
+
+/* comments */
+
+textarea {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.comment-section-heading {
+  text-align: center;
+}
+
+.div-comment {
+  width: 100%;
+  height: auto;
+  background-color: #96616b;
+  margin-top: 1rem;
+}
+
+.comment-header {
+  width: 100%;
+  height: 1.8rem;
+  background-color: #7b454f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.comment-author {
+  padding: 0 1rem;
+}
+
+.comment-author a {
+  color: #fff;
+}
+
+.comment-body {
+  display: flex;
+}
+
+.comment-body textarea.comment {
+  width: 100%;
+  background-color: #96616b;
+  border: none;
+  padding: 0.825rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  resize: none;
+  overflow: hidden;
+}
+
+.comment-footer {
+  width: 100%;
+  background-color: #7b454f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.div-comment.new-comment .comment-footer {
+  height: 3rem;
+}
+
+.div-comment.single-comment .comment-footer {
+  height: 2.5rem;
+}
+
+.comment-date {
+  padding: 0 1rem;
+  margin-right: auto;
+  font-size: 0.825rem;
+  color: #eee;
+}
+
+.comment-buttons {
+  margin: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-buttons button {
+  margin: 0 0.5rem;
+}
+
+.comment-buttons .save-comment {
+  order: -1;
+}
+
+.newComment {
+  width: 100%;
+  height: 6rem;
+  background-color: #96616b;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  padding: 0.825rem 0.5rem;
+  resize: vertical;
+}
+
+textarea.newComment {
+  padding: 0.5rem 1rem;
+}
+
+#postComment {
+  margin-right: 1rem;
+}
+
+.save-comment.hidden {
+  display: none;
+}
+
+.spanError {
+  color: #cc0000;
+  margin-top: 0.325rem;
+}
+
+.modal-body span .mat-div:first-child {
+  padding-top: 0;
+}
+
+/* #########################################################################
+                            All Meetups
+######################################################################### */
+
+.no-search-match {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #96616b;
+  border: 1px solid #9b0941;
+  border-radius: 6px;
+  padding: 8rem 4rem;
+}
+
+.no-search-match span {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.card-image.meetups img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  min-height: 186px;
+  max-height: 186px;
+}
+
+/* Set custom height */
+@media screen and (max-width: 916px) {
+  .card-image.meetups img {
+    min-height: 200px;
+    max-height: 200px;
+  }
+}
+
+@media screen and (max-width: 574px) {
+  .card-image.meetups img {
+    min-height: 270px;
+    max-height: 270px;
+  }
+}
+
+.search-image {
+  background-image: url("/images/site/searchImage.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  color: #333;
+  width: 30%;
+  height: 2rem;
+  margin: 0 1rem 0 1rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .search-image {
+    flex-direction: column;
+  }
+  .search-input {
+    width: 70%;
+    margin-bottom: 1rem;
+  }
+}
+
+.card-content.meetups .date {
+  color: rgb(72, 113, 189);
+}
+
+.card-content.meetups .location {
+  color: rgb(245, 159, 78);
+}
+
+.grid-meetups {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* pagination part */
+
+.per-page-title {
+  margin-right: 0.5rem;
+}
+
+.pagination-container {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .pagination-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pagination-left {
+    margin-bottom: 4px;
+  }
+}
+
+.radio-btn-limit:not(:last-child) {
+  margin-right: 4px;
+}
+
+.pagination-left {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-right {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.pagination-link {
+  background-color: #96616b;
+  color: #fff;
+  padding: 0.4rem 0.675rem;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pagination-link.pagination-arrow {
+  padding: 0;
+}
+
+button.pagination-link.disabled,
+button.pagination-link[disabled] {
+  cursor: default !important;
+  color: #9e9e9e !important;
+  box-shadow: none !important;
+}
+
+button.pagination-link.disabled:not(.btn-flat),
+button.pagination-link[disabled]:not(.btn-flat) {
+  background-color: #cdcdcd !important;
+}
+
+button.pagination-link.disabled:not(.btn-flat):hover,
+button.pagination-link[disabled]:not(.btn-flat):hover {
+  background-color: #cdcdcd !important;
+}
+
+.pagination-link i {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-link:not(:last-child) {
+  margin-right: 3px;
+}
+
+.pagination-link.is-active {
+  background-color: #5a3b41;
+}
+
+.pagination-link.is-active:hover {
+  background-color: #5a3b41;
+}
+
+.pagination-link.is-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-link.is-disabled:hover {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-link:hover {
+  background-color: #7e535c;
+}
+
+.per-page {
+  display: none;
+}
+
+input[type="radio"]:not(:checked) + label {
+  color: #999999;
+}
+
+input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: #333;
+}
+
+label[for^="show"] {
+  font-size: 20px;
+}
+
+label[for^="show"]:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+*/
+
+/* #########################################################################
+                            Contact page
+######################################################################### */
+
+.btn-send-mail {
+  margin-top: 3rem;
+}
+
+.card-title.contact {
+  text-align: center;
+  text-transform: none;
+}
+
+.grid-contact {
+  display: grid;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.contact-emails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-from {
+  flex: 1 1 50%;
+  margin-right: 1rem;
+}
+
+.email-to {
+  flex: 1 1 25%;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-contact {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-contact {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-emails {
+    display: block;
+  }
+  .email-from {
+    margin: 0;
+  }
+  .email-to {
+    margin: 0;
+  }
+}
+
+/* #########################################################################
+                            Forgot Password page
+######################################################################### */
+
+.forgot-password-title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.forgot-password-subtitle {
+  text-align: center;
+}
+
+.btn-forgot-password {
+  margin-top: 3rem;
+}
+
+.grid-forgot-password {
+  display: grid;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-forgot-password {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-forgot-password {
+    width: 100%;
+  }
+}
+
+/* #########################################################################
+                            Login page
+######################################################################### */
+
+.card-title.login {
+  text-align: center;
+}
+
+.forgot-password-link {
+  display: inline-flex;
+  padding-top: 1rem;
+}
+
+.btn-login {
+  margin-top: 3rem;
+}
+
+.grid-login {
+  display: grid;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-login {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-login {
+    width: 100%;
+  }
+}
+
+/* #########################################################################
+                            Profile page
+######################################################################### */
+
+/* form info */
+
+.form-info {
+  display: grid;
+  background-color: #fff;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "heading heading heading heading"
+    "avatar avatar info info";
+}
+
+.profile-image {
+  height: 200px;
+  width: 200px;
+  object-fit: fill;
+  border-radius: 50%;
+  border: 4px solid #96616b;
+}
+
+.heading-area {
+  grid-area: heading;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.avatar-area {
+  grid-area: avatar;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.info-area {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.btn-form-info {
+  align-self: center;
+  margin-top: auto;
+}
+
+@media screen and (max-width: 750px) {
+  .form-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "heading heading heading heading"
+      "avatar avatar avatar avatar"
+      "info info info info";
+  }
+  .btn-form-info {
+    margin-top: 3rem;
+    align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .heading-area {
+    font-size: 21px;
+  }
+}
+
+/* form password */
+
+.form-password {
+  margin-top: 1rem;
+  background-color: #fff;
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "heading heading heading"
+    "pwErr pwErr pwErr"
+    "old pw conf"
+    "btn btn btn";
+
+  padding: 0 1rem 1rem 1rem;
+}
+
+.btn-form-password {
+  margin-top: 3rem;
+}
+
+.form-password div:nth-child(2) {
+  grid-area: old;
+}
+.form-password div:nth-child(3) {
+  grid-area: pw;
+}
+.form-password div:nth-child(4) {
+  grid-area: conf;
+}
+.form-password div:nth-child(5) {
+  grid-area: btn;
+}
+div.alert.error {
+  grid-area: pwErr;
+}
+
+@media screen and (max-width: 950px) {
+  .form-password {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "heading heading heading heading"
+      "pwErr pwErr pwErr pwErr"
+      "old old . ."
+      "pw pw conf conf"
+      "btn btn btn btn";
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .form-password {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "pwErr"
+      "old"
+      "pw"
+      "conf"
+      "btn";
+  }
+}
+
+/* gallery section */
+
+.gallery {
+  display: grid;
+  grid-gap: 0.625rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 0.625rem;
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  min-height: 186px;
+  max-height: 186px;
+  border: 4px solid #96616b;
+}
+
+.gallery-item {
+  position: relative;
+  min-height: 186px;
+  max-height: 186px;
+}
+
+.gallery-title-box {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #333;
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+
+.gallery-image:hover {
+  opacity: 0.9;
+}
+
+.gallery-image:hover ~ .gallery-title-box {
+  opacity: 1;
+  bottom: 4px;
+  transform: rotateX(0);
+}
+
+.gallery-container .gallery-title {
+  text-align: center;
+  padding: 0.825rem 1.5rem;
+  font-family: cursive;
+}
+
+/* #########################################################################
+                            Register page
+######################################################################### */
+
+.card-title.register {
+  text-align: center;
+}
+
+.have-account-link {
+  display: inline-flex;
+  padding-top: 1rem;
+}
+
+.btn-register {
+  margin-top: 3rem;
+}
+
+.grid-register {
+  display: grid;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-register {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-register {
+    width: 100%;
+  }
+}
+
+/* #########################################################################
+                            Reset Password page
+######################################################################### */
+
+.reset-password-title {
+  text-align: center;
+}
+
+.btn-reset-password {
+  margin-top: 2rem;
+}
+
+.grid-reset-password {
+  display: grid;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-reset-password {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-reset-password {
+    width: 100%;
+  }
+}

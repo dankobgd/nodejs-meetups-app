@@ -1,0 +1,61 @@
+<div class="container">
+  <form id="form" class="grid-register validate" method="POST" action="/register">
+    <div class="card register">
+      <div class="card-content register">
+        <span class="card-title register">Register</span>
+
+        <!-- Register form validation errors -->
+        {{#if validationErrors}}
+        {{#each validationErrors}}
+        <div class="alert error">
+          <span>{{msg}}</span>
+        </div>
+        {{/each}}
+        {{/if}}
+
+        <!-- Register database check error -->
+        {{#if error}}
+        <div class="alert error">
+          <span>{{error}}</span>
+        </div>
+        {{/if}}
+
+        <!-- Username -->
+        <div class="mat-div">
+          <label for="username" class="mat-label">Username</label>
+          <input type="text" class="mat-input" id="username" name="username" required>
+        </div>
+
+        <!-- Email -->
+        <div class="mat-div">
+          <label for="email" class="mat-label">Email</label>
+          <input type="email" class="mat-input" id="email" name="email" required>
+        </div>
+
+        <!-- Password -->
+        <div class="mat-div">
+          <label for="password" class="mat-label">Password</label>
+          <input type="password" class="mat-input" id="password" name="password" required>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mat-div">
+          <label for="confirmPassword" class="mat-label">Confirm Password</label>
+          <input type="password" class="mat-input" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="btn-register">
+          <button class="btn" type="submit">Submit</button>
+        </div>
+
+        <!-- Already have account -->
+        <a class="have-account-link" href="/login">Already have an account? Log in here</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<script src="/javascripts/pageScripts/register.js"></script>

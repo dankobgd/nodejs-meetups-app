@@ -1,0 +1,107 @@
+<div class="container">
+
+  <!-- Search section -->
+  <form method="GET" action="/meetups">
+    <div class="search-image">
+      <input class="search-input" name="search" type="text" placeholder="Search meetup">
+      <button class="btn" type="submit">Search</button>
+    </div>
+  </form>
+
+
+
+  {{#if noMatch}}
+  <div class="no-search-match">
+    <span>{{noMatch}}</span>
+  </div>
+
+  {{else}}
+  <div class="grid-meetups">
+    {{#each meetups}}
+    <div class="card meetups">
+      <div class="card-image meetups">
+        <img src="{{imageUrl}}">
+      </div>
+      <div class="card-content meetups">
+        <p class="card-title meetups">{{title}}</p>
+        <p class="date">{{FORMAT_LONG_DATE date}}</p>
+        <p class="location">{{location}}</p>
+      </div>
+      <div class="card-action">
+        <a class="btn" href="/meetup/{{id}}">Details</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+
+
+  {{#if meetups.length}}
+  {{#if pagination.pageCount}}
+  <div class="pagination-container">
+    <div class="pagination-left">
+      <span class="per-page-title">Show per page:</span>
+      <div class="radio-btn-limit">
+        <input class="per-page" name="limit" type="radio" id="show8" value="8">
+        <label for="show8">8</label>
+      </div>
+      <div class="radio-btn-limit">
+        <input class="per-page" name="limit" type="radio" id="show16" value="16">
+        <label for="show16">16</label>
+      </div>
+      <div class="radio-btn-limit">
+        <input class="per-page" name="limit" type="radio" id="show32" value="32">
+        <label for="show32">32</label>
+      </div>
+    </div>
+    {{/if}}
+
+
+
+    {{#if pagination.pageCount}}
+    <div class="pagination pagination-right">
+      {{#PAGINATE pagination type="first"}}
+      <button class="pagination-link first-link" data-page="{{n}}" {{#if disabled}} disabled="disabled"
+        {{/if}}>First</button>
+      {{/PAGINATE}}
+
+      {{#PAGINATE pagination type="previous"}}
+      <button class="pagination-link pagination-arrow left" {{#if disabled}} disabled="disabled"
+        {{/if}}data-page="{{n}}">
+        <i class="material-icons">chevron_left</i>
+      </button>
+      {{/PAGINATE}}
+
+      {{#PAGINATE pagination type="middle" limit=pagination.pageCount}}
+      <button {{#if active}} class="pagination-link is-active" {{else}} class="pagination-link" {{/if}}
+        data-page="{{n}}">{{n}}</button>
+      {{/PAGINATE}}
+
+      {{#PAGINATE pagination type="next"}}
+      <button class="pagination-link pagination-arrow right" {{#if disabled}} disabled="disabled" {{/if}}
+        data-page="{{n}}">
+        <i class="material-icons">chevron_right</i>
+      </button>
+      {{/PAGINATE}}
+
+      {{#PAGINATE pagination type="last"}}
+      <button class="pagination-link last-link" data-page="{{n}}" {{#if disabled}} disabled="disabled"
+        {{/if}}>Last</button>
+      {{/PAGINATE}}
+    </div>
+    {{/if}}
+  </div>
+  {{else}}
+  <div class="carousel-container zero-meetups">
+    <div class="carousel-content zero-meetups">
+      <p>No Meetups Created</p>
+      <p>Go ahead and post one</p>
+      <a href="/createMeetup">Create New</a>
+    </div>
+  </div>
+  {{/if}}
+  {{/if}}
+</div>
+
+<!-- Script -->
+<script src="/javascripts/pageScripts/meetups.js"></script>

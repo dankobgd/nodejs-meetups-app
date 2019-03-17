@@ -1,0 +1,1013 @@
+/* #########################################################################
+                            ALERT MESSAGE
+######################################################################### */
+
+.alert {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0.25rem 1rem;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .error {
+    border: 1px solid #cc0000;
+    color: #cc0000;
+  }
+  
+  .success {
+    border: 1px solid #009900;
+    color: #009900;
+  }
+  
+  
+  /* #########################################################################
+                                  BUTTONS
+  ######################################################################### */
+  
+  .btn {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 1.5rem;
+    color: #424242;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.8px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    outline: none;
+    border: none;
+    user-select: none;
+    border-radius: 2px;
+    transition: all 0.3s ease-out;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+  }
+  
+  .btn:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.225);
+  }
+  
+  
+  /* ----------------------------------------------------------------------
+                      Material Design Fab Buttons
+  ----------------------------------------------------------------------- */
+  
+  .btn.btn-fab,
+  .btn.btn-fab-mini {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    line-height: normal;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn.btn-fab:hover,
+  .btn.btn-fab-mini:hover {
+    box-shadow: 0 4px 11px 0px rgba(0, 0, 0, 0.375);
+  }
+  
+  .btn.btn-fab i,
+  .btn.btn-fab-mini i {
+    display: inline-block;
+    float: none;
+    width: inherit;
+    margin: 0;
+    font-size: inherit;
+    text-align: center;
+    line-height: none;
+    vertical-align: middle;
+  }
+  
+  .btn.btn-fab {
+    width: 56px;
+    height: 56px;
+    font-size: 28px;
+  }
+  
+  .btn.btn-fab-mini {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  
+  
+  /* ----------------------------------------------------------------------
+                              Button colors
+  ----------------------------------------------------------------------- */
+  
+  .btn.btn-lightBlue {
+    color: #fff;
+    background-color: #03a9f4;
+  }
+  
+  .btn.btn-lightBlue:hover {
+    background-color: #23b9fc;
+  }
+  
+  .btn.btn-white {
+    color: #444;
+    background-color: #fff;
+  }
+  
+  .btn.btn-white:hover {
+    background-color: #fafafa;
+  }
+  
+  .btn.btn-black {
+    color: #bdbdbd;
+    background-color: #111;
+  }
+  
+  .btn.btn-black:hover {
+    background-color: #252525;
+  }
+  
+  .btn.btn-grey {
+    color: #757575;
+    background-color: #f5f5f5;
+  }
+  
+  .btn.btn-grey:hover {
+    background-color: #ebebeb;
+  }
+  
+  .btn.btn-orange {
+    color: #fff;
+    background-color: #ff9800;
+  }
+  
+  .btn.btn-orange:hover {
+    background-color: #ffa829;
+  }
+  
+  .btn.btn-amber {
+    color: #fff;
+    background-color: #ffc107;
+  }
+  
+  .btn.btn-amber:hover {
+    background-color: #ffcb30;
+  }
+  
+  .btn.btn-green {
+    color: #fff;
+    background-color: #4caf50;
+  }
+  
+  .btn.btn-green:hover {
+    background-color: #67bd6a;
+  }
+  
+  .btn.btn-teal {
+    color: #fff;
+    background-color: #009688;
+  }
+  
+  .btn.btn-teal:hover {
+    background-color: #00bfad;
+  }
+  
+  .btn.btn-cyan {
+    color: #fff;
+    background-color: #00bcd4;
+  }
+  
+  .btn.btn-cyan:hover {
+    background-color: #00e0fd;
+  }
+  
+  .btn.btn-indigo {
+    color: #fff;
+    background-color: #3f51b5;
+  }
+  
+  .btn.btn-indigo:hover {
+    background-color: #5869c5;
+  }
+  
+  .btn.btn-deepPurple {
+    color: #fff;
+    background-color: #673ab7;
+  }
+  
+  .btn.btn-deepPurple:hover {
+    background-color: #7c52c8;
+  }
+  
+  .btn.btn-pink {
+    color: #fff;
+    background-color: #e91e63;
+  }
+  
+  .btn.btn-pink:hover {
+    background-color: #ed437d;
+  }
+  
+  .btn.btn-red {
+    color: #fff;
+    background-color: #f44336;
+  }
+  
+  .btn.btn-red:hover {
+    background-color: #f6675d;
+  }
+  
+  .btn.btn-yellow {
+    color: #fff;
+    background-color: #ffeb3b;
+  }
+  
+  .btn.btn-yellow:hover {
+    background-color: #f8de00;
+  }
+  
+  .btn.btn-lime {
+    color: #fff;
+    background-color: #cddc39;
+  }
+  
+  .btn.btn-lime:hover {
+    background-color: #bac923;
+  }
+  
+  .btn.btn-brown {
+    color: #fff;
+    background-color: #795548;
+  }
+  
+  .btn.btn-brown:hover {
+    background-color: #936757;
+  }
+  
+  
+  /* ----------------------------------------------------------------------
+                              Button sizes
+  ----------------------------------------------------------------------- */
+  
+  .btn.btn-lg {
+    height: 48px;
+    line-height: 48px;
+  }
+  
+  .btn.btn-sm {
+    height: 30px;
+    padding: 0 1rem;
+    line-height: 30px;
+    font-size: 12px;
+  }
+  
+  .btn.btn-xs {
+    height: 24px;
+    padding: 0 0.4rem;
+    line-height: 24px;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+  }
+  
+  
+  /* ----------------------------------------------------------------------
+                              Button types
+  ----------------------------------------------------------------------- */
+  
+  .btn.disabled,
+  .btn[disabled] {
+    cursor: default !important;
+    color: #9e9e9e !important;
+    box-shadow: none !important;
+  }
+  
+  .btn.disabled:not(.btn-flat),
+  .btn[disabled]:not(.btn-flat) {
+    background-color: #cdcdcd !important;
+  }
+  
+  .btn.disabled:not(.btn-flat):hover,
+  .btn[disabled]:not(.btn-flat):hover {
+    background-color: #cdcdcd !important;
+  }
+  
+  .btn.btn-flat {
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+  
+  .btn.btn-flat:hover {
+    background-color: #cecece;
+    box-shadow: none !important;
+  }
+  
+  .btn.btn-flat.disabled:hover,
+  .btn.btn-flat[disabled]:hover {
+    background-color: transparent !important;
+  }
+  
+  .btn.btn-link {
+    color: #3949ab !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+  }
+  
+  .btn.btn-link:hover {
+    text-decoration: underline !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .btn.btn-link.disabled,
+  .btn.btn-link[disabled] {
+    color: #9fa8da !important;
+    text-decoration: underline !important;
+    background-color: transparent !important;
+  }
+  
+  .btn.btn-link.disabled:hover,
+  .btn.btn-link[disabled]:hover {
+    background-color: transparent !important;
+  }
+  
+  .btn i {
+    float: left;
+    width: auto;
+    height: auto;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    line-height: inherit;
+  }
+  
+  .btn i.right {
+    float: right !important;
+    margin: 0;
+    margin-left: 10px;
+  }
+  
+  
+  /* ----------------------------------------------------------------------
+                          Rounded Button
+  ----------------------------------------------------------------------- */
+  
+  .btn-transparent {
+    color: #333;
+    font-family: sans-serif;
+    background-color: white;
+    border: 0;
+    padding: 0.75rem 2.5rem;
+    font-size: inherit;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.075s all ease-out;
+    text-decoration: none;
+    font-weight: bolder;
+  }
+  
+  .btn-transparent:hover {
+    background-color: transparent;
+    color: white;
+  }
+  
+  
+  /* #########################################################################
+                              CAROUSEL SLIDESHOW
+  ######################################################################### */
+  
+  .carousel-container {
+    width: 100%;
+  }
+  
+  .carousel-content {
+    position: relative;
+  }
+  
+  .carousel-item {
+    display: none;
+  }
+  
+  .arrow {
+    position: absolute;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    width: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1rem;
+    transition: 0.5s ease;
+  }
+  
+  .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .arrow.next {
+    right: 0;
+  }
+  
+  .carousel-dots {
+    text-align: center;
+  }
+  
+  .dot {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin: 0.825rem 0.5rem;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: inset 0 1px 1px 0 #ddd;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active {
+    background: linear-gradient(#b16462, #9b0941);
+    box-shadow: inset 0 0 1px 1px #9b0941;
+  }
+  
+  .dot:hover {
+    background-color: #bbb;
+  }
+  
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+  
+  
+  
+  /* #########################################################################
+                              MATERIAL TEXT FIELDS
+  ######################################################################### */
+  
+  .mat-label {
+    display: block;
+    font-size: 16px;
+    transform: translateY(25px);
+    transform-origin: 0 50%;
+    color: #e2e2e2;
+    transition: all 0.28s;
+  }
+  
+  .mat-input {
+    position: relative;
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-size: 16px;
+  }
+  
+  .mat-div {
+    padding: 30px 0 0 0;
+    position: relative;
+  }
+  
+  .mat-div:after,
+  .mat-div:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e2e2e2;
+    bottom: 0;
+    left: 0;
+    transition: all 0.28s;
+  }
+  
+  .mat-div::after {
+    background-color: #8E8DBE;
+    height: 2px;
+    transform: scaleX(0);
+  }
+  
+  .is-active::after {
+    transform: scaleX(1);
+  }
+  
+  .is-active .mat-label {
+    color: #8E8DBE;
+  }
+  
+  .is-completed .mat-label {
+    transform: translateY(0) scale(0.75);
+  }
+  
+  textarea {
+    background: none;
+    box-shadow: none;
+    border: none;
+    resize: vertical;
+    height: 60px;
+  }
+  
+  
+  /* Validation error message */
+  
+  .error-message {
+    position: absolute;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 1rem;
+    top: calc(100% + 2px);
+  }
+  
+  .mat-div.invalid::after,
+  .mat-div.invalid::before {
+    height: 1px;
+    background-color: red;
+  }
+  
+  .mat-div.invalid::after {
+    background-color: red;
+    height: 2px;
+  }
+  
+  
+  /* #########################################################################
+                              MODAL WINDOW
+  ######################################################################### */
+  
+  body.no-scroll {
+    overflow: hidden;
+  }
+  
+  .modal.modal-open {
+    display: block;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    margin: 10% auto;
+    width: 400px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.15);
+    animation-name: openModal;
+    animation-duration: .6s;
+  }
+  
+  .modal-header {
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+  }
+  
+  .modal-body {
+    padding: 2rem 2.5rem;
+    word-break: break-all;
+  }
+  
+  .modal-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .btn-cancel:active, .btn-save:active {
+    opacity: 0.9;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #b85b4e !important;
+  }
+  
+  .btn-save:hover {
+    background-color: #65a065 !important;
+  }
+  
+  @keyframes openModal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+  /* #########################################################################
+                              NAVIGATION MENU
+  ######################################################################### */
+  
+  nav input[id="menu-toggle"] {
+    display: none;
+  }
+  
+  .menu-icon {
+    position: absolute;
+  }
+  
+  .menu-icon .icon-open {
+    display: none;
+  }
+  
+  .menu-icon .icon-close {
+    display: none;
+  }
+  
+  
+  /* Main navigation bar */
+  
+  nav svg {
+    width: 45px;
+    height: 45px;
+    padding: 12px;
+  }
+  
+  nav svg:hover {
+    cursor: pointer;
+    background: #791038;
+  }
+  
+  nav svg path {
+    fill: #fff;
+  }
+  
+  .main-nav {
+    display: flex;
+    justify-content: flex-end;
+    background: #9b0941;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    cursor: auto;
+    font-size: 18px;
+    height: 45px;
+    line-height: 45px;
+  }
+  
+  .main-nav .menu-logo {
+    margin-right: auto;
+  }
+  
+  .main-nav li:hover {
+    background: #791038;
+    cursor: pointer;
+  }
+  
+  .main-nav li a {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+  }
+  
+  .main-nav li a i.material-icons {
+    padding-right: 5px;
+  }
+  
+  
+  /* Mobile sidenav */
+  
+  .sidenav {
+    box-shadow: 5px 0 5px -5px #333;
+    display: block;
+    width: 80vw;
+    bottom: 0;
+    background: white;
+    color: #333;
+    position: fixed;
+    transform: translateX(-400px);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    top: 45px;
+    z-index: 2;
+    list-style-type: none;
+    padding: 0;
+    max-width: 300px;
+  }
+  
+  .sidenav li {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    float: left;
+    height: 55px;
+    line-height: 55px;
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+  }
+  
+  .sidenav li:hover {
+    background: #eee;
+  }
+  
+  .sidenav li a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sidenav li a i.material-icons {
+    padding-right: 1rem;
+  }
+  
+  #menu-toggle:checked~.menu-icon .icon-close {
+    display: block;
+  }
+  
+  #menu-toggle:checked~.menu-icon .icon-open {
+    display: none;
+  }
+  
+  #menu-toggle:checked~.sidenav {
+    transform: translateX(0);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    z-index: 1000;
+  }
+  
+  #menu-toggle:checked~.menu-icon:after {
+    content: "";
+    opacity: 0;
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 45px;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: opacity 0.2s cubic-bezier(0, 0, 0.3, 1);
+    transition-delay: 0.1s;
+    z-index: 999;
+  }
+  
+  #menu-toggle:checked~.menu-icon:after {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+  }
+  
+  @media screen and (max-width: 850px) {
+    .main-nav {
+      justify-content: center;
+    }
+    .main-nav li:not(.menu-logo) {
+      display: none;
+    }
+    .main-nav .menu-logo {
+      margin-right: 0;
+    }
+    .menu-icon .icon-open {
+      display: block;
+    }
+  }
+  
+  
+  /* #########################################################################
+                                  TOAST
+  ######################################################################### */
+  
+  .toast {
+    visibility: hidden;
+    position: fixed;
+    min-width: 250px;
+    padding: 16px;
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 2px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3rem;
+    /* background-color: #75eb93; */
+  }
+  
+  
+  .showToast {
+    visibility: visible;
+    animation: toastFadeIn 0.5s, toastFadeOut 0.5s 2.5s;
+  }
+  
+  @keyframes toastFadeIn {
+    from {
+      bottom: 0;
+      opacity: 0;
+    }
+    to {
+      bottom: 3rem;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes toastFadeOut {
+    from {
+      bottom: 3rem;
+      opacity: 1;
+    }
+    to {
+      bottom: 0;
+      opacity: 0;
+    }
+  }
+  
+  
+  /* #########################################################################
+                                  TOOLTIP
+  ######################################################################### */
+  
+  [data-tooltip] {
+    position: relative;
+  }
+  
+  [data-tooltip]:before {
+    content: attr(data-tooltip);
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    position: absolute;
+    background-color: rgb(75, 128, 189);
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    top: 50%;
+    left: -15px;
+    transform: translate(-100%, -50%);
+    padding: 10px 20px;
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.25s;
+    pointer-events: none;
+  }
+  
+  [data-tooltip]:after {
+    position: absolute;
+    top: 50%;
+    left: -7px;
+    transform: translate(-100%, -50%);
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid rgb(75, 128, 189);
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.25s;
+    pointer-events: none;
+  }
+  
+  [data-tooltip]:hover::before {
+    opacity: 1;
+    animation: revealTooltipLeft 0.3s ease 0.25s;
+  }
+  
+  [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+  
+  @keyframes revealTooltipLeft {
+    0% {
+      clip-path: inset(0 0 0 100%);
+    }
+    100% {
+      clip-path: inset(0 0 0 0%);
+    }
+  }
+  
+  
+  /* #########################################################################
+                                  CARD
+  ######################################################################### */
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #f3f3f3;
+    border-radius: 0.2rem;
+    box-shadow: 10px 10px 6px -10px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .card:hover .card-image {
+    filter: contrast(100%);
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #999;
+  }
+  
+  .card-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.2rem 0.2rem 0 0;
+    filter: contrast(90%);
+    overflow: hidden;
+    position: relative;
+    transition: filter .5s cubic-bezier(.4, .4, .2, .9);
+  }
+  
+  .card-image img {
+    border-radius: 0.2rem 0.2rem 0 0;
+    width: 100%;
+  }
+  
+  .card-title {
+    display: block;
+    color: #696969;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+  
+  .card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media screen and (max-width: 400px) {
+    .card-content {
+      padding: 1rem;
+    }
+  }
+  
+  
+  /* #########################################################################
+                            Date & Time Pickers Overrides
+  ######################################################################### */
+  
+  /* .dtp-actual-day {background-color: #5f8baf;}
+  .dtp > .dtp-content > .dtp-date-view > header.dtp-header {background-color: #5f8baf !important;}
+  .dtp div.dtp-date, .dtp div.dtp-time {background-color: #77a3c7 !important;}
+  .dtp div.dtp-actual-year {color: #fff !important;}
+  .dtp-select-month-after i, .dtp-select-year-after i, .dtp-select-year-before i, .dtp-select-month-before i {color: #fff;}
+  .dtp table.dtp-picker-days tr > td > a.selected {background-color: #77a3c7 !important;}
+  .dtp-btn-clear:hover {border-color: chocolate !important;}
+  .dtp-btn-cancel:hover {border-color: red !important;}
+  .dtp-btn-save:hover {border-color: green !important;}
+  .dtp div.dtp-date, .dtp div.dtp-time { background: #77a3c7; text-align: center; color: #fff; padding: 10px; }
+  .dtp table.dtp-picker-days tr > td > a.selected{ background: #77a3c7; color: #fff; } */
+  

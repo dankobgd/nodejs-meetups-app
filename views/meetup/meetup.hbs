@@ -1,0 +1,145 @@
+<div class="container">
+  {{#if castError}}
+  <div class="error-output-div">
+    <span class="error-output-text">{{castError}}</span>
+    <p class="error-output-back-link">Go back</p>
+  </div>
+  {{else}} {{#if meetupNotFound}}
+  <div class="error-output-div">
+    <span class="error-output-text">{{meetupNotFound}}</span>
+    <p class="error-output-back-link">Go back</p>
+  </div>
+  {{else}}
+  <div class="grid-meetup">
+    <div class="card meetup">
+      <div class="card-content meetup header">
+        <span class="card-title meetup">{{meetup.title}}</span>
+        <span class="posted-by">posted by:
+          <a href="http://localhost:3000/profile/{{creator._id}}">{{creator.username}}</a> on:
+          {{FORMAT_SHORT_DATE meetup.createdAt}}
+        </span>
+      </div>
+
+      <div class="card-image">
+        <img src="\\{{meetup.imageUrl}}">
+      </div>
+
+      <div class="card-content meetup body">
+        <!-- Google Map -->
+        <div class="map-area" id="map"></div>
+
+        <div class="details-area">
+          <p class="date">{{FORMAT_LONG_DATE meetup.date}}</p>
+          <p class="location">{{meetup.location}}</pan>
+            <p class="description">{{meetup.description}}</p>
+
+            {{#if userIsCreator}}
+            <span class="btn-edit-datetime" data-tooltip="Edit Date & Time">
+              <a id="editDateTimeBtn" class="btn btn-fab-mini btn-pink">
+                <i class="material-icons">date_range</i>
+              </a>
+            </span>
+            {{/if}} {{#if isAuthenticated}} {{#if userIsCreator}}
+            <a id="deleteMeetup" class="btn meetup-action-btn">Delete</a>
+            {{else}} {{#if userIsRegistered}}
+            <a id="regUnreg" class="btn meetup-action-btn">Unregister</a>
+            {{else}}
+            <a id="regUnreg" class="btn meetup-action-btn">Register</a>
+            {{/if}} {{/if}} {{/if}} {{#if userIsCreator}}
+            <span class="btn-edit-info" data-tooltip="Edit Meetup Info">
+              <a id="editMeetupInfoBtn" class="btn btn-fab-mini btn-pink">
+                <i class="material-icons">edit</i>
+              </a>
+            </span>
+            {{/if}} {{#if userIsCreator}}
+            <span class="btn-users-list" data-tooltip="Registered users: ({{registeredUsersList.length}})">
+              <a id="viewUsersListBtn" class="btn btn-fab-mini btn-pink">
+                <i class="material-icons">person_pin</i>
+              </a>
+            </span>
+            {{/if}}
+
+        </div>
+      </div>
+    </div>
+
+
+    {{#if comments.length}}
+    <h2 class="comment-section-heading">Comment section</h2>
+    <span class="comment-section-heading">Total comments: <span
+        class="total-comments-num">{{comments.length}}</span></span>
+    {{else}}
+    <h2 class="comment-section-heading">Comment section</h2>
+    <span class="comment-section-heading">No comments posted for this meetup</span>
+    {{/if}} {{#each comments}}
+
+    <div class="div-comment single-comment" data-commentId="{{_id}}">
+      <div class="comment-header">
+        <span class="comment-author">
+          <a href="http://localhost:3000/profile/{{author._id}}">{{author.username}}</a>
+        </span>
+      </div>
+
+      <div class="comment-body">
+        <textarea spellcheck="false" class="comment" data-commentId="{{_id}}">{{text}}</textarea>
+      </div>
+
+      <div class="comment-footer">
+        <span class="comment-date">{{FORMAT_SHORT_DATE postedAt}}</span>
+        {{#IF_COMMENT_OWNER ../user author}}
+        <div class="comment-buttons">
+          <button class="edit-comment btn btn-xs" data-commentId="{{_id}}">Edit</button>
+          <button class="delete-comment btn btn-xs" data-commentId="{{_id}}">Delete</button>
+          <button class="save-comment btn btn-xs" data-commentId="{{_id}}">Save</button>
+        </div>
+        {{/IF_COMMENT_OWNER}}
+      </div>
+    </div>
+    {{/each}} {{#if isAuthenticated}}
+    <div class="div-comment new-comment">
+      <div class="comment-header"></div>
+      <div class="comment-body">
+        <textarea spellcheck="false" id="newComment" class="newComment" name="newComment" cols="30" rows="10"
+          placeholder="Add comment"></textarea>
+      </div>
+      <div class="comment-footer">
+        <button id="postComment" class="btn btn-sm">Post</button>
+      </div>
+    </div>
+    {{else}}
+    <span class="auth-to-comment"> Register or Login to add your comment to discussion.</span>
+    {{/if}}
+  </div>
+  {{/if}} {{/if}}
+  <!-- endif cast error -->
+</div>
+
+
+
+
+
+
+
+<!-- Dependencies for Date & Time pickers -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/css/bootstrap-material-datetimepicker.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/js/bootstrap-material-datetimepicker.min.js"></script>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUN52L-6WWj31PHyIYTo3a1iVuM1Zp_io"></script>
+
+<!-- Script -->
+<script src="/javascripts/pageScripts/meetup.js"></script>
+
+<script>
+  window.onload = function () {
+    const success = '{{{success}}}'
+
+    if (success) {
+      new Toast('{{success}}');
+    }
+  }
+</script>
