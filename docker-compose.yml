@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  # --------------------------------------------------------------------------------
+  meetups-app:
+    build: .
+    container_name: meetups-app
+    restart: always
+    ports:
+      - "${PORT}:${PORT}"
+    networks:
+      - meetups-net
+    depends_on:
+      - meetups-mongo
+  # --------------------------------------------------------------------------------
+  meetups-mongo:
+    image: mongo
+    container_name: meetups-mongo
+    restart: always
+    volumes:
+      - meetups-mongo-data:/db/data
+    ports:
+      - "${MONGO_PORT}:27017"
+    networks:
+      - meetups-net
+  # --------------------------------------------------------------------------------
+  meetups-meed:
+    image: mongo
+    container_name: meetups-seed
+    restart: on-failure
+    volumes:
+      - ./seed:/seed
+    command: /seed/import.sh
+    networks:
+      - meetups-net
+    depends_on:
+      - meetups-mongo
+  # --------------------------------------------------------------------------------
+
+networks:
+  meetups-net:
+    driver: bridge
+
+volumes:
+  meetups-mongo-data:

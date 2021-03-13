@@ -23,6 +23,7 @@ module.exports.globalVariables = (req, res, next) => {
   res.locals.success = req.session.success;
   delete req.session.success;
   res.locals.isAuthenticated = Boolean(req.session.userId);
+  res.locals.siteUrl = config.SITE_URL;
   next();
 };
 

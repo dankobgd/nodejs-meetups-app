@@ -15,7 +15,7 @@
       <div class="card-content meetup header">
         <span class="card-title meetup">{{meetup.title}}</span>
         <span class="posted-by">posted by:
-          <a href="http://localhost:3000/profile/{{creator._id}}">{{creator.username}}</a> on:
+          <a href="{{siteUrl}}/profile/{{creator._id}}">{{creator.username}}</a> on:
           {{FORMAT_SHORT_DATE meetup.createdAt}}
         </span>
       </div>
@@ -30,34 +30,34 @@
 
         <div class="details-area">
           <p class="date">{{FORMAT_LONG_DATE meetup.date}}</p>
-          <p class="location">{{meetup.location}}</pan>
-            <p class="description">{{meetup.description}}</p>
+          <p class="location">{{meetup.location}}</p>
+          <p class="description">{{meetup.description}}</p>
 
-            {{#if userIsCreator}}
-            <span class="btn-edit-datetime" data-tooltip="Edit Date & Time">
-              <a id="editDateTimeBtn" class="btn btn-fab-mini btn-pink">
-                <i class="material-icons">date_range</i>
-              </a>
-            </span>
-            {{/if}} {{#if isAuthenticated}} {{#if userIsCreator}}
-            <a id="deleteMeetup" class="btn meetup-action-btn">Delete</a>
-            {{else}} {{#if userIsRegistered}}
-            <a id="regUnreg" class="btn meetup-action-btn">Unregister</a>
-            {{else}}
-            <a id="regUnreg" class="btn meetup-action-btn">Register</a>
-            {{/if}} {{/if}} {{/if}} {{#if userIsCreator}}
-            <span class="btn-edit-info" data-tooltip="Edit Meetup Info">
-              <a id="editMeetupInfoBtn" class="btn btn-fab-mini btn-pink">
-                <i class="material-icons">edit</i>
-              </a>
-            </span>
-            {{/if}} {{#if userIsCreator}}
-            <span class="btn-users-list" data-tooltip="Registered users: ({{registeredUsersList.length}})">
-              <a id="viewUsersListBtn" class="btn btn-fab-mini btn-pink">
-                <i class="material-icons">person_pin</i>
-              </a>
-            </span>
-            {{/if}}
+          {{#if userIsCreator}}
+          <span class="btn-edit-datetime" data-tooltip="Edit Date & Time">
+            <a id="editDateTimeBtn" class="btn btn-fab-mini btn-pink">
+              <i class="material-icons">date_range</i>
+            </a>
+          </span>
+          {{/if}} {{#if isAuthenticated}} {{#if userIsCreator}}
+          <a id="deleteMeetup" class="btn meetup-action-btn">Delete</a>
+          {{else}} {{#if userIsRegistered}}
+          <a id="regUnreg" class="btn meetup-action-btn">Unregister</a>
+          {{else}}
+          <a id="regUnreg" class="btn meetup-action-btn">Register</a>
+          {{/if}} {{/if}} {{/if}} {{#if userIsCreator}}
+          <span class="btn-edit-info" data-tooltip="Edit Meetup Info">
+            <a id="editMeetupInfoBtn" class="btn btn-fab-mini btn-pink">
+              <i class="material-icons">edit</i>
+            </a>
+          </span>
+          {{/if}} {{#if userIsCreator}}
+          <span class="btn-users-list" data-tooltip="Registered users: ({{registeredUsersList.length}})">
+            <a id="viewUsersListBtn" class="btn btn-fab-mini btn-pink">
+              <i class="material-icons">person_pin</i>
+            </a>
+          </span>
+          {{/if}}
 
         </div>
       </div>
@@ -76,7 +76,7 @@
     <div class="div-comment single-comment" data-commentId="{{_id}}">
       <div class="comment-header">
         <span class="comment-author">
-          <a href="http://localhost:3000/profile/{{author._id}}">{{author.username}}</a>
+          <a href="{{siteUrl}}/profile/{{author._id}}">{{author.username}}</a>
         </span>
       </div>
 
@@ -132,7 +132,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUN52L-6WWj31PHyIYTo3a1iVuM1Zp_io"></script>
 
 <!-- Script -->
-<script src="/javascripts/pageScripts/meetup.js"></script>
+<script src="/javascripts/pagescripts/meetup.js"></script>
 
 <script>
   window.onload = function () {

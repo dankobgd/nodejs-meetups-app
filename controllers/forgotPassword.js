@@ -1,10 +1,8 @@
 const crypto = require('crypto');
-const mailgun = require('mailgun-js');
+const mailer = require('../config/mailer');
 const User = require('../models/user');
 const {asyncWrap} = require('../middleware/middleware');
 const config = require('../config');
-
-mailgun({apiKey: config.email.apiKey, domain: config.email.domain});
 
 //  Forgot password page get
 module.exports.forgotPassword_get = (req, res, next) => {
@@ -56,22 +54,26 @@ module.exports.forgotPassword_post = asyncWrap(async (req, res, next) => {
 
   function sendMail(user) {
     return new Promise((resolve, reject) => {
+      // prettier-ignore
       const html = `<div>You are recieving this because you (or someone else) have requested the reset of password for your account.</div>
-                            <div>Please click on the following link, or paste this into your browser to complete the password reset process.</div>
-                            http://${req.headers.host}/resetPassword/${user.resetPasswordToken}
-                            <div>If you did not request this, please ignore this email and your password will remain unchanged.</div>`;
+       <div>Please click on the following link, or paste this into your browser to complete the password reset process.</div>
+       <a href="http://${req.headers.host}/resetPassword/${user.resetPasswordToken}">http://${req.headers.host}/resetPassword/${user.resetPasswordToken}</a>
+       <div>If you did not request this, please ignore this email and your password will remain unchanged.</div>`;
 
-      const data = {
+      const options = {
         from: `Forgot Password ${config.email.from}`,
-        to: config.email.to,
+        to: user.email,
         subject: 'Password Reset',
         html,
       };
 
-      mailgun.messages().send(data, (error, mailInfo) => {
-        if (error) return reject(error);
+      mailer.sendMail(options, (error, info) => {
+        if (error) {
+          if (error) return reject(error);
+        }
+
         req.session.emailSuccess = {message: `E-mail has been sent to: ${user.email} with more info`};
-        resolve(mailInfo);
+        resolve(info);
       });
     });
   }

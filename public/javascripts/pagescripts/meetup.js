@@ -44,7 +44,7 @@ fetch(window.location.href, {
         return;
       }
 
-      fetch(`http://localhost:3000/meetup/${data.meetup._id}`, {
+      fetch(`${siteUrl}/meetup/${data.meetup._id}`, {
         method: 'PUT',
         headers: {
           Accept: 'application/json',
@@ -138,7 +138,7 @@ fetch(window.location.href, {
       }
 
       if (validDateTimeEntry()) {
-        fetch(`http://localhost:3000/meetup/${data.meetup._id}`, {
+        fetch(`${siteUrl}/meetup/${data.meetup._id}`, {
           method: 'POST',
           headers: {
             Accept: 'application/json',
@@ -194,7 +194,7 @@ fetch(window.location.href, {
 
     if (registerUnregisterButton !== null) {
       function registerUserForMeetup() {
-        fetch(`http://localhost:3000/meetup/${data.meetup._id}`, {
+        fetch(`${siteUrl}/meetup/${data.meetup._id}`, {
             method: 'PATCH',
             credentials: 'include',
           }).then(() => {
@@ -232,7 +232,7 @@ fetch(window.location.href, {
     }
 
     function deleteMeetup() {
-      fetch(`http://localhost:3000/meetup/${data.meetup._id}`, {
+      fetch(`${siteUrl}/meetup/${data.meetup._id}`, {
         method: 'DELETE',
       })
       .then(() => {
@@ -253,8 +253,8 @@ fetch(window.location.href, {
             `
             <div class="users-list-item">
             <div class="users-list-index">${idx + 1}</div>
-              <img src="\\${user.avatar}" class="users-list-item-avatar" />
-              <a href="http://localhost:3000/profile/${user._id}">
+              <img src="\\${user.avatar || 'public/images/site/placeholder.jpg'}" class="users-list-item-avatar" />
+              <a href="${siteUrl}/profile/${user._id}">
                 <li>${user.username}</li>
               </a>
             </div>
@@ -304,7 +304,7 @@ fetch(window.location.href, {
         }
 
         if (authorId && newComment.value.trim() !== '') {
-          fetch(`http://localhost:3000/meetup/${data.meetup._id}/comments`, {
+          fetch(`${siteUrl}/meetup/${data.meetup._id}/comments`, {
             method: 'POST',
             headers: {
               Accept: 'application/json',
@@ -352,7 +352,7 @@ fetch(window.location.href, {
         inputComment.focus();
 
         saveBtn.addEventListener('click', () => {
-          fetch(`http://localhost:3000/meetup/${data.meetup._id}/comments`, {
+          fetch(`${siteUrl}/meetup/${data.meetup._id}/comments`, {
             method: 'PUT',
             headers: {
               Accept: 'application/json',
@@ -397,7 +397,7 @@ fetch(window.location.href, {
         modalDeleteComment.onSave = () => removeComment();
 
         function removeComment() {
-          fetch(`http://localhost:3000/meetup/${data.meetup._id}/comments`, {
+          fetch(`${siteUrl}/meetup/${data.meetup._id}/comments`, {
             method: 'DELETE',
             headers: {
               Accept: 'application/json',

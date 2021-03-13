@@ -1,8 +1,8 @@
 <div class="container">
 
   <!-- Form info -->
-  <form id="form-info" class="form-info validate" method="POST" action="/profile/{{user._id}}/updateInfo"
-    {{#if profileOwner}} style="display: grid;" {{else}} style="display:initial;" {{/if}} enctype="multipart/form-data">
+  <form id="form-info" class="form-info validate" method="POST" action="/profile/{{user._id}}/updateInfo" {{#if
+    profileOwner}} style="display: grid;" {{else}} style="display:initial;" {{/if}} enctype="multipart/form-data">
 
     {{#if profileOwner}}
     <h2 class="heading-area heading-info">
@@ -103,7 +103,7 @@
     <h2 class="gallery-title">Created meetups</h2>
     <div class="gallery">
       {{#each userCreatedMeetups}}
-      <a href="http://localhost:3000/meetup/{{_id}}">
+      <a href="{{siteUrl}}/meetup/{{_id}}">
         <div class="gallery-item">
           <img class="gallery-image" src="\\{{imageUrl}}" alt="">
           <span class="gallery-title-box">{{title}}</span>
@@ -130,7 +130,7 @@
     <h2 class="gallery-title">Registered meetups</h2>
     <div class="gallery">
       {{#each registeredMeetups}}
-      <a href="http://localhost:3000/meetup/{{_id}}">
+      <a href="{{siteUrl}}/meetup/{{_id}}">
         <div class="gallery-item">
           <img class="gallery-image" src="\\{{imageUrl}}" alt="">
           <span class="gallery-title-box">{{title}}</span>
@@ -155,4 +155,4 @@
 
 
 <!-- Script -->
-<script src="/javascripts/pageScripts/profile.js"></script>
+<script src="/javascripts/pagescripts/profile.js"></script>

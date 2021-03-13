@@ -1,9 +1,7 @@
-const mailgun = require('mailgun-js');
 const User = require('../models/user');
 const {asyncWrap} = require('../middleware/middleware');
 const config = require('../config');
-
-mailgun({apiKey: config.email.apiKey, domain: config.email.domain});
+const mailer = require('../config/mailer');
 
 //  Get reset password page
 module.exports.resetPassword_get = asyncWrap(async (req, res) => {
@@ -58,17 +56,21 @@ module.exports.resetPassword_post = asyncWrap(async (req, res) => {
       const html = `<div>Hello, ${user.username}</div><div>Your password for the account: ${
         user.email
       } has been changed successfuly.</div>`;
-      const data = {
+
+      const options = {
         from: `Reset Password ${config.email.from}`,
         to: user.email,
         subject: 'Your password has been changed.',
         html,
       };
 
-      mailgun.messages().send(data, (error, mailInfo) => {
-        if (error) return reject(error);
+      mailer.sendMail(options, (error, info) => {
+        if (error) {
+          return reject(error);
+        }
+
         req.session.emailResetSuccess = {message: 'Your passoword has been changed!'};
-        resolve(mailInfo);
+        resolve(info);
       });
     });
   }

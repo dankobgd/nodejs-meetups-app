@@ -1,0 +1,306 @@
+[
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb5000043929f"
+    },
+    "username": "test",
+    "email": "test@test.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392ab"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ad"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392af"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b2"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b9"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392bd"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c5"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ce"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d9"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a0"
+    },
+    "username": "Helmer_Bode",
+    "email": "Wendell.Ullrich77@hotmail.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392b4"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b9"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392bb"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392bc"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c9"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a1"
+    },
+    "username": "Lenny24",
+    "email": "Mozell_Ankunding12@yahoo.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392ab"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b3"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c1"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ca"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a2"
+    },
+    "username": "Meggie.Hintz",
+    "email": "Abel.Reichert7@hotmail.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392a9"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b0"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b5"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ba"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c5"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c6"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c9"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d6"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a3"
+    },
+    "username": "Ambrose_Gislason30",
+    "email": "Toney_Rice@gmail.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392aa"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ab"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ac"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392af"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b0"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ba"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c0"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c1"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ce"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a4"
+    },
+    "username": "Tyson.Rippin",
+    "email": "Flossie_Lehner47@hotmail.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392a9"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ac"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ae"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392bd"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392be"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c0"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a5"
+    },
+    "username": "Cristina40",
+    "email": "Rudolph_Heaney@gmail.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392ab"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ad"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b8"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392be"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392bf"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c1"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c8"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d4"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392da"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a6"
+    },
+    "username": "Carleton.Nolan",
+    "email": "Theresa_Bartell44@yahoo.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392b8"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392bb"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c9"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a7"
+    },
+    "username": "Kellie86",
+    "email": "Kaela_McKenzie@yahoo.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392af"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392b0"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392be"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c6"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392ca"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d8"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d9"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "603a5c5de52eb500004392a8"
+    },
+    "username": "Ora.Herzog",
+    "email": "Domenic_Paucek12@hotmail.com",
+    "password": "$2a$14$9KWoU.bTTb3gsJUmjsV5Bu1fNERazWW3otaPiHbKwUlh0QnaXmK2S",
+    "registeredMeetups": [
+      {
+        "$oid": "603a5c5de52eb500004392b4"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c0"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c1"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c4"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392c6"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392cb"
+      },
+      {
+        "$oid": "603a5c5de52eb500004392d7"
+      }
+    ]
+  }
+]

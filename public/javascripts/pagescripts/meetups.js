@@ -80,8 +80,8 @@ function initializeSearchParams() {
   let url;
   if (window.location.search === '') {
     url = (limit === null)
-      ? 'http://localhost:3000/meetups?limit=32&page=1'
-      : `http://localhost:3000/meetups?limit=${limit}&page=1`;
+      ? `${siteUrl}/meetups?limit=32&page=1`
+      : `${siteUrl}/meetups?limit=${limit}&page=1`;
     window.location = url;
   }
 }

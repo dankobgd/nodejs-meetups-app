@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const logger = require('morgan');
+const favicon = require('serve-favicon');
 const expressValidator = require('express-validator');
 const middleware = require('./middleware/middleware');
 const configureViewEngine = require('./config/viewEngine');
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'images', 'site', 'favicon.ico')));
 
 const routesDir = path.join(__dirname, 'routes');
 fs.readdirSync(routesDir).forEach(file => {
